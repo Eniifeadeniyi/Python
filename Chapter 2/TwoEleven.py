@@ -1,3 +1,7 @@
+# Ask user for input.
+# Make sure the user cannot input any number that doesn't have five digits.
+# Make each digit in the user's number to be identified singly
+
 number = int(input("Enter a five digit integer: "))
 
 
@@ -18,5 +22,6 @@ else:
 	print(Third_Digit, end="   ")
 	print(Fourth_Digit, end="   ")
 	print(Fifth_Digit)
+
 
 

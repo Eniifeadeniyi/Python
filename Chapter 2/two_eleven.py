@@ -1,5 +1,9 @@
-number = int(input("Enter a five digit integer: "))
+"""
+	Program that separates the digits of a five digit number entered by the user.
+"""
 
+
+number = int(input("Enter a five digit integer: "))
 
 if number > 99999:
 	print("Invalid input!")
@@ -18,5 +22,6 @@ else:
 	print(Third_Digit, end="   ")
 	print(Fourth_Digit, end="   ")
 	print(Fifth_Digit)
+
 
 

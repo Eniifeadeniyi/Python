@@ -1,5 +1,5 @@
 """
-	Trying to see how big Python integers can be.
+	This program is trying to see how big Python integers can be.
 """
 
 Trial_A = 2 * 2
@@ -14,4 +14,5 @@ print("Trial_B =", Trial_B)
 print("Trial_C =", Trial_C)
 print("Trial_D =", Trial_D)
 print("Trial_E =", Trial_E)
+
 print("Trial_F =", Trial_F)

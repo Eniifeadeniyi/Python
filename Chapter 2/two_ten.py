@@ -1,17 +1,31 @@
-#ask user to input 3 integers:
-#convert inputs to integers
-First_Number = int(input("Enter first number: "))
-Second_Number = int(input("Enter second number: "))
-Third_Number = int(input("Enter third number: "))
+"""
+  This program calculates and prints the sum, average, product, largest, and smallest of the numbers inputed by the user.
+"""
 
-#calculations:
-sum = First_Number + Second_Number + Third_Number
+first_number = int(input("Enter first number: "))
+second_number = int(input("Enter second number: "))
+third_number = int(input("Enter third number: "))
+
+sum = first_number + second_number + third_number
 average = sum / 3
-product =  First_Number * Second_Number * Third_Number
-smallest = min(First_Number, Second_Number, Third_Number)
-largest = max(First_Number, Second_Number, Third_Number)
+product =  first_number * second_number * third_number
+smallest = first_number
 
-#convert back to string to concatenate.
+if second_number < first_number:
+  smallest = second_number
+
+if third_number < first_number:
+  smallest = third_number
+
+
+largest = first_number
+
+if second_number > first_number:
+  largest = second_number
+
+if third_number > first_number:
+  largest = third_number
+
 print("The sum of the numbers is " + str(sum))
 print("The average of the numbers is " + str(average))
 print("The product of the numbers is " + str(product))

@@ -1,3 +1,8 @@
+"""
+	This program displays a day of the week according to a number entered eg. Monday = 1, Tuesday = 2, etc
+"""
+
+
 number = int(input("Enter an integer from 1 to 7: "))
 
 number >= 1 
@@ -19,5 +24,6 @@ if number == 7:
 	print("Sunday")
 else: 
 	print("Invalid input!")
+
 
 

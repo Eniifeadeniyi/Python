@@ -1,3 +1,7 @@
+"""
+	This program displays the second largest number of the numbers entered.
+"""
+
 first_number = int(input("Enter your first number: "))
 second_number = int(input("Enter your second number: "))
 third_number = int(input("Enter your third number: "))

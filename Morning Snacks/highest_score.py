@@ -1,3 +1,7 @@
+"""
+	This program displays the highest of all the scores entered.
+"""
+
 first_score = int(input("Enter first score: "))
 second_score = int(input("Enter second score:"))
 third_score = int(input("Enter third score: "))
@@ -11,3 +15,4 @@ if third_score > maximum:
 	maximum = third_score
 
 print("The highest score is: " + str(maximum))
+

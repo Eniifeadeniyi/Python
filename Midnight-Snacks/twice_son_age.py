@@ -23,5 +23,5 @@ if father >= 1 and father <= 80:
 if father >= 1 and father <= 80:
 	future = father - (2 * son)
 	print("It will take " + str(future) + " years for the father's age to be twice his son's age")
-	past = abs((2 * son) - father)
+	past = ((2 * son) - father)) * -1
 	print("The father's age was twice his son's age " + str(past) + " years ago.")

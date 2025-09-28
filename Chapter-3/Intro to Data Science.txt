@@ -1,0 +1,28 @@
+3.28 (Intro to Data Science: Mean, Median and Mode) Calculate the mean, median and mode of the values 9, 11, 22, 34, 17, 22, 34, 22 and 40. Suppose the values included another 34. What problem might occur? 
+It will be bimodal if another 34 is added.
+
+import statistics
+
+values = [9, 11, 22, 34, 17, 22, 34, 22, 40]
+mean = statistics.mean(values)
+median = statistics.median(values)
+mode = statistics.mode(values)
+ 
+print("The mean is: " + str(mean))
+print("The median is: " + str(median))
+print("The mode is: " + str(mode))
+
+
+
+
+3.29 (Intro to Data Science: Problem with the Median) For an odd number of values, to get the median you simply arrange them in order and take the middle value. For an even number, you average the two middle values. What problem occurs if those two values are different?
+The mean won't be a number that is in the data.
+
+3.30 (Intro to Data Science: Outliers) In statistics, outliers are values out of the ordinary and possibly way out of the ordinary. Sometimes, outliers are simply bad data. In the data science case studies, we’ll see that outliers can distort results. Which of the three measures of central tendency we discussed—mean, median and mode—is most affected by outliers?
+Why? Which of these measures are not affected or least affected? Why?
+The mean is most affected by outliers because the outlier will make the mean much larger than it actually is.
+The mode is least affected since outliers aren't usually a lot.
+
+
+3.31 (Intro to Data Science: Categorical Data) Mean, median and mode work well with numerical values. You can use them in calculations and arrange them in meaningful order. Categorical values are descriptive names like Boxer, Poodle, Collie, Beagle, Bulldog and Chihuahua. Normally, you don’t use these in calculations nor associate an order with them. Which if any of the descriptive statistics are appropriate for categorical data?
+Mode

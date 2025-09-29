@@ -87,12 +87,12 @@ match option:
 				set = int(input("Enter a number: "))
 				match set:
 					case 1:
-						set1 = """
+						set_1 = """
 						1. Message centre number
 						2. Message sent as
 						3. Message validity
 						"""
-						print(set1)		
+						print(set_1)		
 						common = int(input("Enter a number: "))
 						match common:
 							case 1:print("Message centre number")
@@ -100,14 +100,14 @@ match option:
 							case 3:print("Message validity")
 									
 					case 2:
-						common1 = """	
+						common_1 = """	
 						1. Delivery reports
 						2. Reply via same centre
 						3. Character support
 						"""
-						print(common1)
-						common2 =int(input("Enter a number: "))
-						match common2:
+						print(common_1)
+						common_2 =int(input("Enter a number: "))
+						match common_2:
 							case 1:print("Delivery reports")
 							case 2:print("Reply via same centre")
 							case 3:print("Character support")
@@ -303,4 +303,5 @@ match option:
 			case 6:print("Auto update of date and time")							
 	case 12:print("Profiles")
 	case 13:print("SIM services")
+
 

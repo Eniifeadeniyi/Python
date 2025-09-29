@@ -1,0 +1,352 @@
+option = 0
+
+while option != 14 :
+	main = """
+	1. Phonebook
+	2. Messages
+	3. Chat
+	4. Call register
+	5. Tones
+	6. Settings
+	7. Call divert
+	8. Games
+	9. Calculator
+	10. Reminders
+	11. Clock 
+	12. Profiles
+	13. SIM services 
+	14. previous			
+	 """
+	print(main)
+	option = int(input("Enter a number: "))
+
+	match option:
+		case 1: 
+			choice = 0
+			while choice != 11 :
+				phonebook = """
+				1. Search
+				2. Service Nos.
+				3. Add name
+				4. Erase
+				5. Edit
+				6. Assign tone
+				7. Send b'card
+				8. Options
+				9. Speed dials
+				10. Voice tags
+				11. previous
+				"""
+				print(phonebook)
+				choice = int(input("Enter a number: "))
+
+				match choice:
+					case 1: print("Search") 
+					case 2: print("Service Nos.")
+					case 3: print("Add name")	
+					case 4: print("Erase")
+					case 5: print("Edit")
+					case 6: print("Assign tone")
+					case 7: print("Send b'card")						
+					case 8: 
+						pick = 0
+						while pick != 3:
+							choose = """
+							1. Type of view
+							2. Memory status
+							3. return
+							"""
+							print(choose)
+							pick = int(input("Enter a number: "))
+							match pick:
+								case 1:print("Type of view")
+								case 2:print("Memory status")
+					
+					case 9: print("Speed dials")
+					case 10:print("Voice tags")
+
+		case 2:
+			pick = 0
+			while pick != 11:
+				messages = """
+				1. Write messages
+				2. Inbox
+				3. Outbox
+				4. Picture messages
+				5. Templates
+				6. Smileys
+				7. Messages settings
+				8. Info service
+				9. Voice mailbox number
+				10. Service command editor 
+				11. back
+				 """
+				print(messages)
+				pick = int(input("Enter a number: "))
+
+				match pick:
+					case 1:print("Write messages")
+					case 2:print("Inbox")
+					case 3:print("Outbox")		
+					case 4:print("Picture messages")
+					case 5:print("Templates")
+					case 6:print("Smileys")
+					case 7:
+						set = 0
+						while set != 3:
+							message = """
+							1. Set
+							2. Common
+							3. back
+							"""
+							print(message)
+							set = int(input("Enter a number: "))
+							match set:
+								case 1:
+									common = 0
+									while common != 4:
+										set_1 = """
+										1. Message centre number
+										2. Message sent as
+										3. Message validity
+										4. back
+										"""
+										print(set_1)		
+										common = int(input("Enter a number: "))
+										match common:
+											case 1:print("Message centre number")
+											case 2:print("Message sent as")
+											case 3:print("Message validity")
+									
+								case 2:
+									common_2 = 0
+									while common_2 != 4:
+										common_1 = """	
+										1. Delivery reports
+										2. Reply via same centre
+										3. Character support
+										4. previous
+										"""
+										print(common_1)
+										common_2 =int(input("Enter a number: "))
+										match common_2:
+											case 1:print("Delivery reports")
+											case 2:print("Reply via same centre")
+											case 3:print("Character support")
+					case 8:print("Info service")
+					case 9:print("Voice mailbox number")
+					case 10:print("Service command editor")		
+						
+
+
+		case 3:print("Chat")
+		case 4:
+			register = 20
+			while register != 9:
+				call = """
+				1. Missed calls
+				2. Received calls
+				3. Dialled numbers
+				4. Erase recent call lists
+				5. Show call duration
+				6. Show call costs
+				7. Call cost settings
+				8. Prepaid credit 
+				9. return
+				"""
+				print(call)
+				register = int(input("Enter a number: "))
+				match register:
+					case 1:print("Missed calls")
+					case 2:print("Received calls")
+					case 3:print("Dialled numbers")		
+					case 4:print("Erase recent call lists")
+					case 5:
+						duration = 45
+						while duration != 6:
+							show = """
+							1. Last call duration
+							2. All calls' duration
+							3. Received calls' duration
+							4. Dialled calls' duration
+							5. Clear timers 
+							6. back
+							"""
+							print(show)
+							duration = int(input("Enter a number: "))
+							match duration:
+								case 1:print("Last call duration")
+								case 2:print("All calls' duration")
+								case 3:print("Received calls' duration")
+								case 4:print("Dialled calls' duration")
+								case 5:print("Clear timers")	
+							
+					case 6:
+						cost = 35
+						while cost != 4:
+							costs = """
+							1. Last call cost
+							2. All calls' cost
+							3. Clear counters
+							4. previous
+							"""
+							print(costs)
+							cost =int(input("Enter a number: "))
+							match cost:
+								case 1:print("Last call cost")
+								case 2:print("All calls' cost")
+								case 3:print("Clear counters")
+					case 7:
+						limit = 0
+						while limit != 3:
+							settings = """
+							1. Call cost limit
+							2. Show costs in
+							3. previous
+							"""
+							print(settings)
+							limit = int(input("Enter a number: "))
+							match limit:
+								case 1:print("Call cost limit")
+								case 2:print("Show costs in")
+						
+					case 8: print("Prepaid credit")			
+
+		
+		case 5:
+			tone = 13
+			while tone != 10:
+				tones = """
+				1. Ringing tone
+				2. Ringing volume
+				3. Incoming call alert
+				4. Composer
+				5. Message alert tone
+				6. Keypad tones
+				7. Warning and game tones
+				8. Vibrating alert
+				9. Screen saver
+				10. return
+				"""
+				print(tones)
+				tone= int(input("Enter a number: "))
+				match tone:
+					case 1:print("Ringing tone")
+					case 2:print("Ringing volume")
+					case 3:print("Incoming call alert")
+					case 4:print("Composer")
+					case 5:print("Message alert tone")
+					case 6:print("Keypad tones")
+					case 7:print("Warning and game tones")
+					case 8:print("Vibrating alert")
+					case 9:print("Screen saver")
+					
+		case 6:	
+			set = 7
+			while set != 5:	
+				setting = """
+				1. Call settings
+				2. Phone settings
+				3. Security settings
+				4. Restore factory settings
+				5. return
+				"""
+				print(setting)
+				set = int(input("Enter a number: "))
+				match set:
+					case 1:
+						auto = 20
+						while auto != 7:
+							automatic = """
+							1. Automatic redial
+							2. Speed dialling
+							3. Call waiting options
+							4. Own number sending
+							5. Phone line in use
+							6. Automatic answer
+							7. back		
+							"""
+							print(automatic)
+							auto = int(input("Enter a number: "))
+							match auto:
+								case 1:print("Automatic redial")
+								case 2:print("Speed dialling")
+								case 3:print("Call waiting options")
+								case 4:print("Own number sending")
+								case 5:print("Phone line in use")
+								case 6:print("Automatic answer")		
+							
+					case 2:
+						language = 0
+						while language != 7:
+							phone = """
+							1. Language
+							2. Cell info display
+							3. Welcome note
+							4. Network selection
+							5. Lights
+							6. Confirm SIM service actions
+							7. back
+							"""
+							print(phone)
+							language = int(input("Enter a number:"))
+							match language:
+								case 1:print("Language")
+								case 2:print("Cell info display")
+								case 3:print("Welcome note")
+								case 4:print("Network selection")
+								case 5:print("Lights")
+								case 6:print("Confirm SIM service actions")								
+	
+		
+					case 3:
+						secure = 12
+						while secure != 7:
+							security = """
+							1. PIN code request
+							2. Call barring service
+							3. Fixed dialling
+							4. Closed user group
+							5. Phone security
+							6. Change access codes
+							7. back
+							"""
+							print(security)
+							secure = int(input("Enter a number: "))
+							match secure:
+								case 1:print("PIN code request")
+								case 2:print("Call barring service")
+								case 3:print("Fixed dialling")
+								case 4:print("Closed user group")
+								case 5:print("Phone security")
+								case 6:print("Change access codes")
+									
+					case 4:print("Restore factory settings")	
+				
+		case 7:print("Call divert")
+		case 8:print("Games")
+		case 9:print("Calculator")
+		case 10:print("Reminders")
+		case 11:
+			alarm = 0
+			while alarm != 7:
+				clock = """
+				1. Alarm clock
+				2. Clock settings
+				3. Date settings
+				4. Stopwatch
+				5. Countdown timer
+				6. Auto update of date and time
+				7. previous
+				"""
+				print(clock)
+				alarm = int(input("Enter a number: "))
+				match alarm:
+					case 1:print("Alarm clock")
+					case 2:print("Clock settings")
+					case 3:print("Date settings")
+					case 4:print("Stopwatch")
+					case 5:print("Countdown timer")
+					case 6:print("Auto update of date and time")							
+		case 12:print("Profiles")
+		case 13:print("SIM services")

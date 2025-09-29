@@ -84,7 +84,7 @@ match option:
 				2. Common
 				"""
 				print(message)
-				set = int(input("Enter a number: "));
+				set = int(input("Enter a number: "))
 				match set:
 					case 1:
 						set1 = """
@@ -303,3 +303,4 @@ match option:
 			case 6:print("Auto update of date and time")							
 	case 12:print("Profiles")
 	case 13:print("SIM services")
+

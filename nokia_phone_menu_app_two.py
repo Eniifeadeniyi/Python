@@ -1,7 +1,8 @@
-option = 0
-
-while option != 14 :
+option = ""
+while option != "14":
 	main = """
+		WELCOME TO THE NOKIA 3310 MENU
+Below are the features offered:
 	1. Phonebook
 	2. Messages
 	3. Chat
@@ -15,16 +16,17 @@ while option != 14 :
 	11. Clock 
 	12. Profiles
 	13. SIM services 
-	14. previous			
+	14. exit		
 	 """
 	print(main)
-	option = int(input("Enter a number: "))
+	option = input("Enter a number: ")
 
 	match option:
-		case 1: 
-			choice = 0
-			while choice != 11 :
+		case "1": 
+			choice = ""
+			while choice != "11" :
 				phonebook = """
+				Phonebook
 				1. Search
 				2. Service Nos.
 				3. Add name
@@ -38,36 +40,177 @@ while option != 14 :
 				11. previous
 				"""
 				print(phonebook)
-				choice = int(input("Enter a number: "))
-
+				choice = input("Enter a number: ")
 				match choice:
-					case 1: print("Search") 
-					case 2: print("Service Nos.")
-					case 3: print("Add name")	
-					case 4: print("Erase")
-					case 5: print("Edit")
-					case 6: print("Assign tone")
-					case 7: print("Send b'card")						
-					case 8: 
-						pick = 0
-						while pick != 3:
+					case "11": print("Bye!")
+					case "1": 
+						searches = "" 
+						while searches != "0":
+							search = """
+							Search
+							0. back
+								"""
+							print(search)
+							searches = input("Enter a number: ")
+							match searches:
+								case "0": print("Bye!")
+								case _: print("Unsupported input!")
+
+					case "2": 
+						serve = "" 
+						while serve != "0":
+							service = """
+							Service Nos.
+							0. back
+								"""
+							print(service)
+							serve = input("Enter a number: ")
+							match serve:
+								case "0": print("Bye!")
+								case _: print("Unsupported input!")
+
+
+					case "3": 
+						add = "" 
+						while add != "0":
+							name = """
+							Add name
+							0. back
+								"""
+							print(name)
+							add = input("Enter a number: ")
+							match add:
+								case "0": print("Bye!")
+								case _: print("Unsupported input!")
+
+	
+					case "4": 
+						erase = "" 
+						while erase != "0":
+							erases = """
+							Erase
+							0. back
+								"""
+							print(erases)
+							erase = input("Enter a number: ")
+							match erase:
+								case "0": print("Bye!")
+								case _: print("Unsupported input!")
+
+
+					case "5":  
+						edit = "" 
+						while edit != "0":
+							edits = """
+							Edit
+							0. back
+								"""
+							print(edits)
+							edit = input("Enter a number: ")
+							match edit:
+								case "0": print("Bye!")
+								case _: print("Unsupported input!")
+
+
+					case "6":  
+						asign = "" 
+						while assign != "0":
+							sign = """
+							Assign tone
+							0. back
+								"""
+							print(sign)
+							assign = input("Enter a number: ")
+							match assign:
+								case "0": print("Bye!")
+								case _: print("Unsupported input!")
+
+
+					case "7":  
+						send = "" 
+						while send != "0":
+							card = """
+							Send b'card
+							0. back
+								"""
+							print(card)
+							send = input("Enter a number: ")
+							match send:
+								case "0": print("Bye!")
+								case _: print("Unsupported input!")
+
+					
+					case "8": 
+						picks = ""
+						while picks != "3":
 							choose = """
 							1. Type of view
 							2. Memory status
 							3. return
 							"""
 							print(choose)
-							pick = int(input("Enter a number: "))
-							match pick:
-								case 1:print("Type of view")
-								case 2:print("Memory status")
-					
-					case 9: print("Speed dials")
-					case 10:print("Voice tags")
+							picks = input("Enter a number: ")
+							match picks:
+								case "3": print("Bye!")
+								case "1":  
+									view = "" 
+									while view != "0":
+										types = """
+											Type of view
+											0. back
+											"""
+										print(types)
+										view = input("Enter a number: ")
+										match view:
+											case "0": print("Bye!")
+											case _: print("Unsupported input!")
 
-		case 2:
-			pick = 0
-			while pick != 11:
+
+								case "2":   
+									mem = "" 
+									while mem != "0":
+										mems = """
+											Type of view
+											0. back
+											"""
+										print(mems)
+										mem = input("Enter a number: ")
+										match mem:
+											case "0": print("Bye!")
+											case _: print("Unsupported input!")
+
+
+								case _: print("Unsupported input!")
+					
+					case "9":  
+						speed = "" 
+						while speed != "0":
+							speedo = """
+							Speed dials
+							0. back
+								"""
+							print(speedo)
+							speed = input("Enter a number: ")
+							match speed:
+								case "0": print("Bye!")
+								case _: print("Unsupported input!")
+					case "10": 
+						tag = "" 
+						while tag != "0":
+							tags = """
+							Voice tags
+							0. back
+								"""
+							print(tags)
+							tag = input("Enter a number: ")
+							match tag:
+								case "0": print("Bye!")
+								case _: print("Unsupported input!")
+					case _: print("Unsupported input!")
+
+		case "2":
+			pick = ""
+			while pick != "11":
 				messages = """
 				1. Write messages
 				2. Inbox
@@ -82,29 +225,97 @@ while option != 14 :
 				11. back
 				 """
 				print(messages)
-				pick = int(input("Enter a number: "))
+				pick = input("Enter a number: ")
 
 				match pick:
-					case 1:print("Write messages")
-					case 2:print("Inbox")
-					case 3:print("Outbox")		
-					case 4:print("Picture messages")
-					case 5:print("Templates")
-					case 6:print("Smileys")
-					case 7:
-						set = 0
-						while set != 3:
+					case "11" : print("Bye!")
+					case "1": 
+						write = "" 
+						while write != "0":
+							mess = """
+							Write messages
+							0. back
+								"""
+							print(mess)
+							write = input("Enter a number: ")
+							match write:
+								case "0": print("Bye!")
+								case _: print("Unsupported input!")
+					case "2": 
+						inbox = "" 
+						while inbox != "0":
+							box = """
+							Inbox
+							0. back
+								"""
+							print(box)
+							inbox = input("Enter a number: ")
+							match inbox:
+								case "0": print("Bye!")
+								case _: print("Unsupported input!")
+					case "3": 
+						out = "" 
+						while out != "0":
+							boxes = """
+							Outbox
+							0. back
+								"""
+							print(boxes)
+							out = input("Enter a number: ")
+							match out:
+								case "0": print("Bye!")
+								case _: print("Unsupported input!")		
+					case "4": 
+						pic = "" 
+						while pic != "0":
+							pics = """
+							Picture messages
+							0. back
+								"""
+							print(pics)
+							pic = input("Enter a number: ")
+							match pic:
+								case "0": print("Bye!")
+								case _: print("Unsupported input!")
+					case "5":
+						temp = "" 
+						while temp != "0":
+							plate = """
+							Templates
+							0. back
+								"""
+							print(plate)
+							temp = input("Enter a number: ")
+							match temp:
+								case "0": print("Bye!")
+								case _: print("Unsupported input!")
+					case "6":
+						smile = "" 
+						while smile != "0":
+							mile = """
+							Smileys
+							0. back
+								"""
+							print(mile)
+							smile = input("Enter a number: ")
+							match smile:
+								case "0": print("Bye!")
+								case _: print("Unsupported input!")
+					case "7":
+						set = ""
+						while set != "3":
 							message = """
 							1. Set
 							2. Common
 							3. back
 							"""
 							print(message)
-							set = int(input("Enter a number: "))
+							set = input("Enter a number: ")
 							match set:
-								case 1:
-									common = 0
-									while common != 4:
+								case "3" : print("Bye!")
+								case "1":
+									common = ""
+									while common != "4":
 										set_1 = """
 										1. Message centre number
 										2. Message sent as
@@ -112,15 +323,52 @@ while option != 14 :
 										4. back
 										"""
 										print(set_1)		
-										common = int(input("Enter a number: "))
+										common = input("Enter a number: ")
 										match common:
-											case 1:print("Message centre number")
-											case 2:print("Message sent as")
-											case 3:print("Message validity")
+											case "4" : print("Bye!")
+											case "1": 
+												message = "" 
+												while message != "0":
+													centre = """
+													Message centre number
+													0. back
+													"""
+													print(centre)
+													message = input("Enter a number: ")
+													match message:
+														case "0": print("Bye!")
+														case _: print("Unsupported input!")
+											case "2": 
+												sent = "" 
+												while sent != "0":
+													send = """
+													Message sent as
+													0. back
+													"""
+													print(send)
+													sent = input("Enter a number: ")
+													match sent:
+														case "0": print("Bye!")
+														case _: print("Unsupported input!")
+
+											case "3": 
+												valid = "" 
+												while valid != "0":
+													validity = """
+													Message validity
+													0. back
+													"""
+													print(validity)
+													valid = input("Enter a number: ")
+													match valid:
+														case "0": print("Bye!")
+														case _: print("Unsupported input!")
+
+											case _:  print("Unsupported input!")
 									
-								case 2:
-									common_2 = 0
-									while common_2 != 4:
+								case "2":
+									common_2 = ""
+									while common_2 != "4":
 										common_1 = """	
 										1. Delivery reports
 										2. Reply via same centre
@@ -128,21 +376,108 @@ while option != 14 :
 										4. previous
 										"""
 										print(common_1)
-										common_2 =int(input("Enter a number: "))
+										common_2 = input("Enter a number: ")
 										match common_2:
-											case 1:print("Delivery reports")
-											case 2:print("Reply via same centre")
-											case 3:print("Character support")
-					case 8:print("Info service")
-					case 9:print("Voice mailbox number")
-					case 10:print("Service command editor")		
+											case "4" : print("Bye!")
+											case "1": 
+												deliver = "" 
+												while deliver != "0":
+													rep = """
+													Delivery reports
+													0. back
+													"""
+													print(rep)
+													deliver = input("Enter a number: ")
+													match deliver:
+														case "0": print("Bye!")
+														case _: print("Unsupported input!")
+
+											case "2": 
+												reply = "" 
+												while reply != "0":
+													via = """
+													Reply via same centre
+													0. back
+													"""
+													print(via)
+													reply = input("Enter a number: ")
+													match reply:
+														case "0": print("Bye!")
+														case _: print("Unsupported input!")
+
+											case "3": 
+												character = "" 
+												while character != "0":
+													act = """
+													Character support
+													0. back
+													"""
+													print(act)
+													character = input("Enter a number: ")
+													match character:
+														case "0": print("Bye!")
+														case _: print("Unsupported input!")
+
+											case _: print("Unsupported input!")
+								
+								case _: print("Unsupported input!")
+
+
+					case "8":
+						info = "" 
+						while info != "0":
+							serves = """
+							Info services
+							0. back
+								"""
+							print(serves)
+							info = input("Enter a number: ")
+							match info:
+								case "0": print("Bye!")
+								case _: print("Unsupported input!")
+					case "9":
+						mail = "" 
+						while mail != "0":
+							mailbox = """
+							Voice mailbox number
+							0. back
+								"""
+							print(mailbox)
+							mail = input("Enter a number: ")
+							match mail:
+								case "0": print("Bye!")
+								case _: print("Unsupported input!")
+					case "10":
+						service = "" 
+						while service != "0":
+							editor = """
+							Service command editor
+							0. back
+								"""
+							print(editor)
+							service = input("Enter a number: ")
+							match service:
+								case "0": print("Bye!")
+								case _: print("Unsupported input!")	
+					case _: print("Unsupported input!")	
 						
 
 
-		case 3:print("Chat")
-		case 4:
-			register = 20
-			while register != 9:
+		case "3":
+			hat = "" 
+			while hat != "0":
+				chat = """
+				Chat
+				0. back
+				"""
+				print(chat)
+				hat = input("Enter a number: ")
+				match hat:
+					case "0": print("Bye!")
+					case _: print("Unsupported input!")
+		case "4":
+			register = ""
+			while register != "9":
 				call = """
 				1. Missed calls
 				2. Received calls
@@ -155,15 +490,60 @@ while option != 14 :
 				9. return
 				"""
 				print(call)
-				register = int(input("Enter a number: "))
+				register = input("Enter a number: ")
 				match register:
-					case 1:print("Missed calls")
-					case 2:print("Received calls")
-					case 3:print("Dialled numbers")		
-					case 4:print("Erase recent call lists")
-					case 5:
-						duration = 45
-						while duration != 6:
+					case "9" : print("Bye!")
+					case "1":
+						miss = "" 
+						while miss != "0":
+							missed = """
+							Missed calls
+							0. back
+								"""
+							print(missed)
+							miss = input("Enter a number: ")
+							match miss:
+								case "0": print("Bye!")
+								case _: print("Unsupported input!")
+					case "2":
+						receive = "" 
+						while receive != "0":
+							received = """
+							Received calls
+							0. back
+								"""
+							print(received)
+							receive = input("Enter a number: ")
+							match receive:
+								case "0": print("Bye!")
+								case _: print("Unsupported input!")
+					case "3":
+						dial = "" 
+						while dial != "0":
+							dialled = """
+							Dialled numbers
+							0. back
+								"""
+							print(dialled)
+							dial = input("Enter a number: ")
+							match dial:
+								case "0": print("Bye!")
+								case _: print("Unsupported input!")		
+					case "4":
+						recent = "" 
+						while recent != "0":
+							cent = """
+							Erase recent call lists
+							0. back
+								"""
+							print(cent)
+							recent = input("Enter a number: ")
+							match recent:
+								case "0": print("Bye!")
+								case _: print("Unsupported input!")
+					case "5":
+						duration = ""
+						while duration != "6":
 							show = """
 							1. Last call duration
 							2. All calls' duration
@@ -173,17 +553,74 @@ while option != 14 :
 							6. back
 							"""
 							print(show)
-							duration = int(input("Enter a number: "))
+							duration = input("Enter a number: ")
 							match duration:
-								case 1:print("Last call duration")
-								case 2:print("All calls' duration")
-								case 3:print("Received calls' duration")
-								case 4:print("Dialled calls' duration")
-								case 5:print("Clear timers")	
+								case "1":
+									rate = "" 
+									while rate != "0":
+										last = """
+										Last call duration
+										0. back
+										"""
+										print(last)
+										rate = input("Enter a number: ")
+										match rate:
+											case "0": print("Bye!")
+											case _: print("Unsupported input!")
+								case "2":
+									all = "" 
+									while all != "0":
+										duration = """
+										All calls' duration
+										0. back
+										"""
+										print(duration)
+										all = input("Enter a number: ")
+										match all:
+											case "0": print("Bye!")
+											case _: print("Unsupported input!")
+								case "3":
+									rec = "" 
+									while rec != "0":
+										ration = """
+										Received calls' duration
+										0. back
+										"""
+										print(ration)
+										rec = input("Enter a number: ")
+										match rec:
+											case "0": print("Bye!")
+											case _: print("Unsupported input!")
+								case "4":
+									rate = "" 
+									while rate != "0":
+										last = """
+										Dialled calls' duration
+										0. back
+										"""
+										print(last)
+										rate = input("Enter a number: ")
+										match rate:
+											case "0": print("Bye!")
+											case _: print("Unsupported input!")
+								case "5":
+									clear = "" 
+									while clear != "0":
+										timer = """
+										Clear timers
+										0. back
+										"""
+										print(timer)
+										clear = input("Enter a number: ")
+										match clear:
+											case "0": print("Bye!")
+											case _: print("Unsupported input!")
+
+								case _: print("Unsupported input!")	
 							
-					case 6:
-						cost = 35
-						while cost != 4:
+					case "6":
+						cost = ""
+						while cost != "4":
 							costs = """
 							1. Last call cost
 							2. All calls' cost
@@ -191,31 +628,45 @@ while option != 14 :
 							4. previous
 							"""
 							print(costs)
-							cost =int(input("Enter a number: "))
+							cost = input("Enter a number: ")
 							match cost:
-								case 1:print("Last call cost")
-								case 2:print("All calls' cost")
-								case 3:print("Clear counters")
-					case 7:
-						limit = 0
-						while limit != 3:
+								case "1":print("Last call cost")
+								case "2":print("All calls' cost")
+								case "3":print("Clear counters")
+								case _: print("Unsupported input!")
+					case "7":
+						limit = ""
+						while limit != "3":
 							settings = """
 							1. Call cost limit
 							2. Show costs in
 							3. previous
 							"""
 							print(settings)
-							limit = int(input("Enter a number: "))
+							limit = input("Enter a number: ")
 							match limit:
-								case 1:print("Call cost limit")
-								case 2:print("Show costs in")
-						
-					case 8: print("Prepaid credit")			
-
+								case "1":print("Call cost limit")
+								case "2":print("Show costs in")
+								case _: print("Unsupported input!")
+				
+					case "8": 
+						paid = "" 
+						while paid != "0":
+							credit = """
+							Prepaid credit
+							0. back
+							"""
+							print(credit)
+							paid = input("Enter a number: ")
+							match paid:
+								case "0": print("Bye!")
+								case _: print("Unsupported input!")
+			
+					case _: print("Unsupported input!")
 		
-		case 5:
-			tone = 13
-			while tone != 10:
+		case "5":
+			tone = ""
+			while tone != "10":
 				tones = """
 				1. Ringing tone
 				2. Ringing volume
@@ -229,21 +680,139 @@ while option != 14 :
 				10. return
 				"""
 				print(tones)
-				tone= int(input("Enter a number: "))
+				tone = input("Enter a number: ")
 				match tone:
-					case 1:print("Ringing tone")
-					case 2:print("Ringing volume")
-					case 3:print("Incoming call alert")
-					case 4:print("Composer")
-					case 5:print("Message alert tone")
-					case 6:print("Keypad tones")
-					case 7:print("Warning and game tones")
-					case 8:print("Vibrating alert")
-					case 9:print("Screen saver")
+					case "10":print("Bye!")
+					case "1":
+						rate = "" 
+						while rate != "0":
+							last = """
+							Ringing tone
+							0. back
+							"""
+							print(last)
+							rate = input("Enter a number: ")
+							match rate:
+								case "0": print("Bye!")
+								case _: print("Unsupported input!")
+
+					case "2":
+						rate = "" 
+						while rate != "0":
+							last = """
+							Ringing volume
+							0. back
+							"""
+							print(last)
+							rate = input("Enter a number: ")
+							match rate:
+								case "0": print("Bye!")
+								case _: print("Unsupported input!")
+
+
+					case "3":
+						rate = "" 
+						while rate != "0":
+							last = """
+							Incoming call alert
+							0. back
+							"""
+							print(last)
+							rate = input("Enter a number: ")
+							match rate:
+								case "0": print("Bye!")
+								case _: print("Unsupported input!")
+
+
+					case "4":
+						rate = "" 
+						while rate != "0":
+							last = """
+							Composer
+							0. back
+							"""
+							print(last)
+							rate = input("Enter a number: ")
+							match rate:
+								case "0": print("Bye!")
+								case _: print("Unsupported input!")
+
+
+					case "5":
+						rate = "" 
+						while rate != "0":
+							last = """
+							Message alert tone
+							0. back
+							"""
+							print(last)
+							rate = input("Enter a number: ")
+							match rate:
+								case "0": print("Bye!")
+								case _: print("Unsupported input!")
+
+
+					case "6":
+						rate = "" 
+						while rate != "0":
+							last = """
+							Keypad tones
+							0. back
+							"""
+							print(last)
+							rate = input("Enter a number: ")
+							match rate:
+								case "0": print("Bye!")
+								case _: print("Unsupported input!")
+
+
+					case "7":
+						rate = "" 
+						while rate != "0":
+							last = """
+							Warning and game tones
+							0. back
+							"""
+							print(last)
+							rate = input("Enter a number: ")
+							match rate:
+								case "0": print("Bye!")
+								case _: print("Unsupported input!")
+
+
+					case "8":
+						rate = "" 
+						while rate != "0":
+							last = """
+							Vibrating alert
+							0. back
+							"""
+							print(last)
+							rate = input("Enter a number: ")
+							match rate:
+								case "0": print("Bye!")
+								case _: print("Unsupported input!")
+
+
+					case "9":
+						rate = "" 
+						while rate != "0":
+							last = """
+							Screen saver
+							0. back
+							"""
+							print(last)
+							rate = input("Enter a number: ")
+							match rate:
+								case "0": print("Bye!")
+								case _: print("Unsupported input!")
+
+
+					case _: print("Unsupported input!")
 					
-		case 6:	
-			set = 7
-			while set != 5:	
+		case "6":	
+			set = ""
+			while set != "5":	
 				setting = """
 				1. Call settings
 				2. Phone settings
@@ -252,11 +821,12 @@ while option != 14 :
 				5. return
 				"""
 				print(setting)
-				set = int(input("Enter a number: "))
+				set = input("Enter a number: ")
 				match set:
-					case 1:
-						auto = 20
-						while auto != 7:
+					case "5": print("Bye!")
+					case "1":
+						auto = ""
+						while auto != "7":
 							automatic = """
 							1. Automatic redial
 							2. Speed dialling
@@ -267,18 +837,88 @@ while option != 14 :
 							7. back		
 							"""
 							print(automatic)
-							auto = int(input("Enter a number: "))
+							auto = input("Enter a number: ")
 							match auto:
-								case 1:print("Automatic redial")
-								case 2:print("Speed dialling")
-								case 3:print("Call waiting options")
-								case 4:print("Own number sending")
-								case 5:print("Phone line in use")
-								case 6:print("Automatic answer")		
+								case "7": print("Bye!")
+								case "1":
+									rate = "" 
+									while rate != "0":
+										last = """
+										Automatic redial
+										0. back
+										"""
+										print(last)
+										rate = input("Enter a number: ")
+										match rate:
+											case "0": print("Bye!")
+											case _: print("Unsupported input!")
+
+
+								case "2":
+									rate = "" 
+									while rate != "0":
+										last = """
+										Speed dialling
+										0. back
+										"""
+										print(last)
+										rate = input("Enter a number: ")
+										match rate:
+											case "0": print("Bye!")
+											case _: print("Unsupported input!")
+								case "3":
+									rate = "" 
+									while rate != "0":
+										last = """
+										Call waiting options
+										0. back
+										"""
+										print(last)
+										rate = input("Enter a number: ")
+										match rate:
+											case "0": print("Bye!")
+											case _: print("Unsupported input!")
+								case "4":
+									rate = "" 
+									while rate != "0":
+										last = """
+										Own number sending
+										0. back
+										"""
+										print(last)
+										rate = input("Enter a number: ")
+										match rate:
+											case "0": print("Bye!")
+											case _: print("Unsupported input!")
+								case "5":
+									rate = "" 
+									while rate != "0":
+										last = """
+										Phone line in use
+										0. back
+										"""
+										print(last)
+										rate = input("Enter a number: ")
+										match rate:
+											case "0": print("Bye!")
+											case _: print("Unsupported input!")
+								case "6":
+									rate = "" 
+									while rate != "0":
+										last = """
+										Automatic answer
+										0. back
+										"""
+										print(last)
+										rate = input("Enter a number: ")
+										match rate:
+											case "0": print("Bye!")
+											case _: print("Unsupported input!")
+								case _: print("Unsupported input!")		
 							
-					case 2:
-						language = 0
-						while language != 7:
+					case "2":
+						language = ""
+						while language != "7":
 							phone = """
 							1. Language
 							2. Cell info display
@@ -289,19 +929,87 @@ while option != 14 :
 							7. back
 							"""
 							print(phone)
-							language = int(input("Enter a number:"))
+							language = input("Enter a number:")
 							match language:
-								case 1:print("Language")
-								case 2:print("Cell info display")
-								case 3:print("Welcome note")
-								case 4:print("Network selection")
-								case 5:print("Lights")
-								case 6:print("Confirm SIM service actions")								
+								case "7": print("Bye!")
+								case "1":
+									rate = "" 
+									while rate != "0":
+										last = """
+										Language
+										0. back
+										"""
+										print(last)
+										rate = input("Enter a number: ")
+										match rate:
+											case "0": print("Bye!")
+											case _: print("Unsupported input!")
+								case "2":
+									rate = "" 
+									while rate != "0":
+										last = """
+										Cell info display
+										0. back
+										"""
+										print(last)
+										rate = input("Enter a number: ")
+										match rate:
+											case "0": print("Bye!")
+											case _: print("Unsupported input!")
+								case "3":
+									rate = "" 
+									while rate != "0":
+										last = """
+										Welcome note
+										0. back
+										"""
+										print(last)
+										rate = input("Enter a number: ")
+										match rate:
+											case "0": print("Bye!")
+											case _: print("Unsupported input!")
+								case "4":
+									rate = "" 
+									while rate != "0":
+										last = """
+										Network selection
+										0. back
+										"""
+										print(last)
+										rate = input("Enter a number: ")
+										match rate:
+											case "0": print("Bye!")
+											case _: print("Unsupported input!")
+								case "5":
+									rate = "" 
+									while rate != "0":
+										last = """
+										Lights
+										0. back
+										"""
+										print(last)
+										rate = input("Enter a number: ")
+										match rate:
+											case "0": print("Bye!")
+											case _: print("Unsupported input!")
+								case "6":
+									rate = "" 
+									while rate != "0":
+										last = """
+										Confirm SIM service actions
+										0. back
+										"""
+										print(last)
+										rate = input("Enter a number: ")
+										match rate:
+											case "0": print("Bye!")
+											case _: print("Unsupported input!")
+								case _: print("Unsupported input!")								
 	
 		
-					case 3:
-						secure = 12
-						while secure != 7:
+					case "3":
+						secure = ""
+						while secure != "7":
 							security = """
 							1. PIN code request
 							2. Call barring service
@@ -312,24 +1020,151 @@ while option != 14 :
 							7. back
 							"""
 							print(security)
-							secure = int(input("Enter a number: "))
+							secure = input("Enter a number: ")
 							match secure:
-								case 1:print("PIN code request")
-								case 2:print("Call barring service")
-								case 3:print("Fixed dialling")
-								case 4:print("Closed user group")
-								case 5:print("Phone security")
-								case 6:print("Change access codes")
+								case "7": print("Bye!")
+								case "1":
+									rate = "" 
+									while rate != "0":
+										last = """
+										PIN code request
+										0. back
+										"""
+										print(last)
+										rate = input("Enter a number: ")
+										match rate:
+											case "0": print("Bye!")
+											case _: print("Unsupported input!")
+								case "2":
+									rate = "" 
+									while rate != "0":
+										last = """
+										Call barring service
+										0. back
+										"""
+										print(last)
+										rate = input("Enter a number: ")
+										match rate:
+											case "0": print("Bye!")
+											case _: print("Unsupported input!")
+								case "3":
+									rate = "" 
+									while rate != "0":
+										last = """
+										Fixed dialling
+										0. back
+										"""
+										print(last)
+										rate = input("Enter a number: ")
+										match rate:
+											case "0": print("Bye!")
+											case _: print("Unsupported input!")
+								case "4":
+									rate = "" 
+									while rate != "0":
+										last = """
+										Closed user group
+										0. back
+										"""
+										print(last)
+										rate = input("Enter a number: ")
+										match rate:
+											case "0": print("Bye!")
+											case _: print("Unsupported input!")
+								case "5":
+									rate = "" 
+									while rate != "0":
+										last = """
+										Phone security
+										0. back
+										"""
+										print(last)
+										rate = input("Enter a number: ")
+										match rate:
+											case "0": print("Bye!")
+											case _: print("Unsupported input!")
+								case "6":
+									rate = "" 
+									while rate != "0":
+										last = """
+										Change access codes
+										0. back
+										"""
+										print(last)
+										rate = input("Enter a number: ")
+										match rate:
+											case "0": print("Bye!")
+											case _: print("Unsupported input!")
+								case _: print("Unsupported input!")
 									
-					case 4:print("Restore factory settings")	
+					case "4":
+						rate = "" 
+						while rate != "0":
+							last = """
+							Restore factory settings
+							0. back
+							"""
+							print(last)
+							rate = input("Enter a number: ")
+							match rate:
+								case "0": print("Bye!")
+								case _: print("Unsupported input!")
+					case _: print("Unsupported input!")	
 				
-		case 7:print("Call divert")
-		case 8:print("Games")
-		case 9:print("Calculator")
-		case 10:print("Reminders")
-		case 11:
-			alarm = 0
-			while alarm != 7:
+		case "7":
+			rate = "" 
+			while rate != "0":
+				last = """
+				Call divert
+				0. back
+				"""
+				print(last)
+				rate = input("Enter a number: ")
+				match rate:
+					case "0": print("Bye!")
+					case _: print("Unsupported input!")
+		case "8":
+			rate = "" 
+			while rate != "0":
+				last = """
+				Games
+				0. back
+				"""
+				print(last)
+				rate = input("Enter a number: ")
+				match rate:
+					case "0": print("Bye!")
+					case _: print("Unsupported input!")
+
+		case "9":
+			rate = "" 
+			while rate != "0":
+				last = """
+				Calculator
+				0. back
+				"""
+				print(last)
+				rate = input("Enter a number: ")
+				match rate:
+					case "0": print("Bye!")
+					case _: print("Unsupported input!")
+
+		case "10":
+			rate = "" 
+			while rate != "0":
+				last = """
+				Reminders
+				0. back
+				"""
+				print(last)
+				rate = input("Enter a number: ")
+				match rate:
+					case "0": print("Bye!")
+					case _: print("Unsupported input!")
+
+		case "11":
+			alarm = ""
+			while alarm != "7":
 				clock = """
 				1. Alarm clock
 				2. Clock settings
@@ -340,13 +1175,114 @@ while option != 14 :
 				7. previous
 				"""
 				print(clock)
-				alarm = int(input("Enter a number: "))
+				alarm = input("Enter a number: ")
 				match alarm:
-					case 1:print("Alarm clock")
-					case 2:print("Clock settings")
-					case 3:print("Date settings")
-					case 4:print("Stopwatch")
-					case 5:print("Countdown timer")
-					case 6:print("Auto update of date and time")							
-		case 12:print("Profiles")
-		case 13:print("SIM services")
+					case "7": print("Bye!")
+					case "1":
+						rate = "" 
+						while rate != "0":
+							last = """
+							Alarm clock
+							0. back
+							"""
+							print(last)
+							rate = input("Enter a number: ")
+							match rate:
+								case "0": print("Bye!")
+								case _: print("Unsupported input!")
+
+					case "2":
+						rate = "" 
+						while rate != "0":
+							last = """
+							Clock settings
+							0. back
+							"""
+							print(last)
+							rate = input("Enter a number: ")
+							match rate:
+								case "0": print("Bye!")
+								case _: print("Unsupported input!")
+
+					case "3":
+						rate = "" 
+						while rate != "0":
+							last = """
+							Date settings
+							0. back
+							"""
+							print(last)
+							rate = input("Enter a number: ")
+							match rate:
+								case "0": print("Bye!")
+								case _: print("Unsupported input!")
+
+					case "4":
+						rate = "" 
+						while rate != "0":
+							last = """
+							Stopwatch
+							0. back
+							"""
+							print(last)
+							rate = input("Enter a number: ")
+							match rate:
+								case "0": print("Bye!")
+								case _: print("Unsupported input!")
+
+					case "5":
+						rate = "" 
+						while rate != "0":
+							last = """
+							Countdown timer
+							0. back
+							"""
+							print(last)
+							rate = input("Enter a number: ")
+							match rate:
+								case "0": print("Bye!")
+								case _: print("Unsupported input!")
+
+					case "6":
+						rate = "" 
+						while rate != "0":
+							last = """
+							Auto update of date and time
+							0. back
+							"""
+							print(last)
+							rate = input("Enter a number: ")
+							match rate:
+								case "0": print("Bye!")
+								case _: print("Unsupported input!")
+
+					case _: print("Unsupported input!")
+							
+		case "12":
+			rate = "" 
+			while rate != "0":
+				last = """
+				Profiles
+				0. back
+				"""
+				print(last)
+				rate = input("Enter a number: ")
+				match rate:
+					case "0": print("Bye!")
+					case _: print("Unsupported input!")
+
+		case "13":
+			rate = "" 
+			while rate != "0":
+				last = """
+				SIM services
+				0. back
+				"""
+				print(last)
+				rate = input("Enter a number: ")
+				match rate:
+					case "0": print("Bye!")
+					case _: print("Unsupported input!")
+
+		case "14":print("Goodbye!")
+		case _: print("Unsupported input!")

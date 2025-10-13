@@ -1,4 +1,4 @@
-def get_square_of_each_element(*numbers):
+def get_square_of_each_element(numbers):
 	count = 0
 	square = []
 	while count < len(numbers):
@@ -6,5 +6,5 @@ def get_square_of_each_element(*numbers):
 		count += 1
 	return square
 		
-
-print(get_square_of_each_element(2,3,4,5,7))
+numbers = [2,3,4,5,7]
+print(get_square_of_each_element(numbers))

@@ -1,4 +1,4 @@
-def get_sum_of_the_square_of_each_element(*numbers):
+def get_sum_of_the_square_of_each_element(numbers):
 	count = 0
 	square = []
 	square_sum = 0
@@ -8,4 +8,5 @@ def get_sum_of_the_square_of_each_element(*numbers):
 		count += 1
 	return square_sum
 
-print(get_sum_of_the_square_of_each_element(2,3,4,5,7))
+numbers =[2,3,4,5,7]
+print(get_sum_of_the_square_of_each_element(numbers))

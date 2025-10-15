@@ -1,21 +1,23 @@
-def get_deposit(amount, balance, transactions):
+def get_deposit(amount, balance = 0, transactions = []):
 	balance += amount
-	transactions += f"Deposited : {amount} | New Balance : {balance} "
-	return f'Your new balance is: {balance}'
+	transaction = f"Deposited : {amount} | New Balance : {balance} "
+	transactions.append(transaction)
+	return balance
 
 
 
-def make_withdrawal(withdraw, balance, transactions):
-	if withdraw > balance :
+def make_withdrawal(amount, balance = 0, transactions = []):
+	if amount > balance :
 		print("Withdrawal failed: insufficient funds")
-	if withdraw <= balance:
-		balance -= withdraw
-	transactions += f"Withdrew : {withdraw} | New Balance : {balance}"
-	return f'Your new balance is: {balance}'
+	if amount <= balance:
+		balance -= amount
+	transaction = f"Withdrew : {amount} | New Balance : {balance}"
+	transactions.append(transaction)
+	return balance
 
 
 
 def show_transaction_history(transactions):
-	if transactions == "":
+	if transactions == []:
 		print("No transactions yet.")
 	return transactions

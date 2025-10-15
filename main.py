@@ -1,7 +1,7 @@
 from transaction_log_functions import*
 
 balance = 0.00
-transactions = ""
+transactions = []
 print("Welcome to Transaction Log App")
 choice = 0
 while choice != 4:
@@ -16,19 +16,26 @@ while choice != 4:
 	match choice:
 		case 1: 
 			deposit = float(input("Enter deposit amount: "))
-			balance = get_deposit(deposit, balance)
-			print("New balance: " + str(balance))
+			if deposit > 0:
+				balance = get_deposit(deposit, balance)
+				transaction = f"Deposited : {deposit} | New Balance : {balance}"
+				transactions.append(transaction)
+				print("New balance: " + str(balance))
+			print(get_deposit(deposit))
 
 		case 2: 
 			withdraw = float(input("Enter withdraw amount: "))
 			balance = make_withdrawal(withdraw, balance)
+			transaction = f"Withdrew : {withdraw} | New Balance : {balance}"
+			transactions.append(transaction)
 			print("New balance is: " + str(balance))
 	
 		case 3: 
-			print(show_transaction_history(transactions))
+			transactions = show_transaction_history(transactions)
 
 		case 4:
 			print("Final balance: " + str(balance))
-			print(show_transaction_history(transactions))
+			transactions = show_transaction_history(transactions)
+
 
 		case _: print("Please enter a number above")

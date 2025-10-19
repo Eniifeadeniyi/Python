@@ -15,7 +15,6 @@ while True:
 	"""
 	print(menu)
 	operation = input("Enter operation: ")
-	#choice = "yes"
 	match operation:
 		case "1" : 
 			choice = ""

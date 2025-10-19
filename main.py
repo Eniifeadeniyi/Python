@@ -1,4 +1,4 @@
-from transaction_log_functions import*
+from transaction_log_functions import *
 
 balance = 0.00
 transactions = []

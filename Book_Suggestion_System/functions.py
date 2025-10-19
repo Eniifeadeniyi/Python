@@ -34,6 +34,10 @@ def remove_book(book,converted):
 		print("Book not found!")
 
 	return books 
+def update_book(wrong,correct,books):
+	books.remove(wrong)
+	books.append(correct)
+	return books
 
 def show_books(books):
 	return books

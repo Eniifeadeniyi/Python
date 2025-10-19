@@ -37,7 +37,7 @@ while True:
 		case "4" :
 			wrong = input("Enter the old title: ")
 			correct = input("Enter the new title: ")
-			update_book()
+			update_book(wrong,correct,books)
 		
 		case "5" :
 			print(show_books(books))

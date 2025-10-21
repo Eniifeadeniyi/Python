@@ -26,12 +26,13 @@ while True:
 		
 		case "2" :
 			book = input("Enter the book title: ")
-			add_book(book,converted)
+			print(add_book(book,converted))
+			
 
 		case "3" :
 			print(books)
 			remove = input("Enter the book title: ")
-			remove_book(remove,converted)
+			print(remove_book(remove,converted))
 
 		case "4" :
 			wrong = input("Enter the old title: ")

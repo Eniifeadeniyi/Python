@@ -2,9 +2,9 @@ def petrol_amount(amount, receipts = []):
 	if type(amount) == int or type(amount) == float:
 		if amount >= 1000 and amount <= 50000:
 			number_of_litres = amount / 1000
-		elif amount < 1000:
+		if amount < 1000:
 			return("Amount must be above a liter price!!!")
-		elif amount > 50000:
+		if amount > 50000:
 			return("You can only purchase a maximum of 50L!!!")
 	else:
 		return("Invalid input!")
@@ -29,6 +29,7 @@ def petrol_liter(number_of_litres, receipts = []):
 	else:
 		return("Invalid input!")
 	return amount,number_of_litres
+
 def format_petrol_liter(number_of_litres,amount):
 	return f"""
 		Product : Petrol       								
@@ -43,9 +44,9 @@ def diesel_amount(amount, receipts = []):
 	if type(amount) == int or type(amount) == float:
 		if amount >= 1500 and amount <= 75000:
 			number_of_litres = amount / 1500
-		elif amount < 1500:
+		if amount < 1500:
 			return("Amount must be above a liter price!!!")
-		elif amount > 75000:
+		if amount > 75000:
 			return("You can only purchase a maximum of 50L!!!")
 	else:
 		return("Invalid input!")
@@ -85,9 +86,9 @@ def kerosene_amount(amount, receipts = []):
 	if type(amount) == int or type(amount) == float:
 		if amount >= 1200 and amount <= 60000:
 			number_of_litres = amount / 1200
-		elif amount < 1200:
+		if amount < 1200:
 			return("Amount must be above a liter price!!!")
-		elif amount > 60000:
+		if amount > 60000:
 			return("You can only purchase a maximum of 50L!!!")
 	else:
 		return("Invalid input!")
@@ -128,9 +129,9 @@ def gas_amount(amount, receipts = []):
 	if type(amount) == int or type(amount) == float:
 		if amount >= 1800 and amount <= 90000:
 			number_of_litres = amount / 1800
-		elif amount < 1800:
+		if amount < 1800:
 			return("Amount must be above a liter price!!!")
-		elif amount > 90000:
+		if amount > 90000:
 			return("You can only purchase a maximum of 50L!!!")
 	else:
 		return("Invalid input!")

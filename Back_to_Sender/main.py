@@ -1,6 +1,15 @@
 from functions import *
 
-deliveries = int(input("Enter number of packages successfully delivered by the driver: "))
-if deliveries >= 0 and deliveries <= 100:
-	print("The driver earned: N" + str(get_wage(deliveries)))
-print(get_wage(deliveries))
+for count in range(1,501):
+	deliveries = input("Enter number of packages successfully delivered by the driver: ")
+
+	if deliveries.isdigit():
+		print(get_wage(int(deliveries)))
+	else:
+		print(get_wage(deliveries))
+
+	choice = input("Do you have another delivery to record?(yes/no): ").lower()
+	if choice == "no":
+		print("Thanks for using the app, Bye!") 
+		break
+

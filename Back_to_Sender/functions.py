@@ -11,4 +11,4 @@ def get_wage(number_of_deliveries):
 		else: return "Invalid input!"
 	else: return "Invalid input!"
 
-	return wage
+	return "The driver earned: N" + str(wage)

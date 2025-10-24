@@ -79,6 +79,6 @@ print(reduce(sum_square,square))
 
 #12
 def merge_dictionaries(dictionaries,next_dictionary):
-	return dictionaries + next_dictionary
+	return dictionaries | next_dictionary
 dictionaries = [{"a": 1}, {"b" : 2}, {"c" : 3}]
 print(reduce(merge_dictionaries,dictionaries))

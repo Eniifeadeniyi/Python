@@ -1,3 +1,5 @@
+from datetime import datetime
+
 def petrol_amount(amount, receipts = []):
 	if type(amount) == int or type(amount) == float:
 		if amount >= 1000 and amount <= 50000:
@@ -30,7 +32,7 @@ def petrol_liter(number_of_litres, receipts = []):
 		return("Invalid input!")
 	return amount,number_of_litres
 
-def format_petrol_liter(number_of_litres,amount):
+def format_petrol_liter_receipt(number_of_litres,amount):
 	return f"""
 		Product : Petrol       								
 		Amount : #{amount:.2f}  								
@@ -72,7 +74,7 @@ def diesel_liter(number_of_litres, receipts = []):
 		return("Invalid input!")
 	return amount,number_of_litres	
 
-def format_diesel_liter(number_of_litres,amount):
+def format_diesel_liter_receipt(number_of_litres,amount):
 	return f"""
 		Product : Diesel       								
 		Amount : #{amount:.2f}  								
@@ -114,7 +116,7 @@ def kerosene_liter(number_of_litres, receipts = []):
 		return("Invalid input!")
 	return amount,number_of_litres	
 
-def format_kerosene_liter(number_of_litres,amount):
+def format_kerosene_liter_receipt(number_of_litres,amount):
 	return f"""
 		Product : Kerosene       								
 		Amount : #{amount:.2f}  								
@@ -157,7 +159,7 @@ def gas_liter(number_of_litres, receipts = []):
 		return("Invalid input!")
 	return amount,number_of_litres	
 
-def format_gas_liter(number_of_litres,amount):
+def format_gas_liter_receipt(number_of_litres,amount):
 	return f"""
 		Product : Gas       								
 		Amount : #{amount:.2f}  								
@@ -165,3 +167,10 @@ def format_gas_liter(number_of_litres,amount):
 		Thanks for patronizing Eniife's Station 			
 			Hope to see you again!					
 		"""
+
+def show_history(receipts = []):
+	if receipts == []:
+		return "No purchases made yet"
+	for receipt in receipts:
+		receipt += datetime.now()
+		print(receipt)

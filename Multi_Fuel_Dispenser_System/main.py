@@ -33,15 +33,19 @@ while operation != 3:
 						case "amount" :
 							amount = float(input("How much Petrol are you buying(1000/L): "))
 							amount, number_of_litres = petrol_amount(amount)
+							print("Customer's Transaction Receipt")
 							print(format_petrol_amount_receipt(amount,number_of_litres))
-							receipts.append(format_petrol_liter(liter,price))
+							print("Saving Transaction History...")
+							receipts.append(format_petrol_amount_receipt(amount,number_of_litres))
 							
 						
 						case "liter" :
 							liter = float(input("How many liters of Petrol are you buying(1000/L): "))
 							price, liter = petrol_liter(liter)
-							print(format_petrol_liter(liter,price))
-							receipts.append(format_petrol_liter(liter,price))
+							print("Customer's Transaction Receipt")
+							print(format_petrol_liter_receipt(liter,price))
+							print("Saving Transaction History...")
+							receipts.append(format_petrol_liter_receipt(liter,price))
 							
 
 				case "2" :
@@ -50,19 +54,65 @@ while operation != 3:
 						case "amount" :
 							amount = float(input("How much Petrol are you buying(1000/L): "))
 							amount, number_of_litres = diesel_amount(amount)
+							print("Customer's Transaction Receipt")
 							print(format_diesel_amount_receipt(amount,number_of_litres))
-							receipts.append(format_diesel_amount_receipt(amount,number_of_litres)))
+							print("Saving Transaction History...")
+							receipts.append(format_diesel_amount_receipt(amount,number_of_litres))
 							
 						
 						case "liter" :
 							liter = float(input("How many liters of Petrol are you buying(1000/L): "))
 							price, liter = diesel_liter(liter)
-							print(format_diesel_liter(liter,price))
-							receipts.append(format_diesel_liter(liter,price))
+							print("Customer's Transaction Receipt")
+							print(format_diesel_liter_receipt(liter,price))
+							print("Saving Transaction History...")
+							receipts.append(format_diesel_liter_receipt(liter,price))
+				case "3" :
+					choice = input("Liter or Amount: ").lower();
+					match choice:
+						case "amount" :
+							amount = float(input("How much Petrol are you buying(1000/L): "))
+							amount, number_of_litres = kerosene_amount(amount)
+							print("Customer's Transaction Receipt")
+							print(format_kerosene_amount_receipt(amount,number_of_litres))
+							print("Saving Transaction History...")
+							receipts.append(format_kerosene_amount_receipt(amount,number_of_litres))
+							
+						
+						case "liter" :
+							liter = float(input("How many liters of Petrol are you buying(1000/L): "))
+							price, liter = kerosene_liter(liter)
+							print("Customer's Transaction Receipt")
+							print(format_kerosene_liter_receipt(liter,price))
+							print("Saving Transaction History")
+							receipts.append(format_kerosene_liter_receipt(liter,price))
+
+
+				case "4" :
+					choice = input("Liter or Amount: ").lower();
+					match choice:
+						case "amount" :
+							amount = float(input("How much Petrol are you buying(1000/L): "))
+							amount, number_of_litres = gas_amount(amount)
+							print("Customer's Transaction Receipt")
+							print(format_gas_amount_receipt(amount,number_of_litres))
+							print("Saving Transaction History")
+							receipts.append(format_gas_amount_receipt(amount,number_of_litres))
+							
+						
+						case "liter" :
+							liter = float(input("How many liters of Petrol are you buying(1000/L): "))
+							price, liter = gas_liter(liter)
+							print("Customer's Transaction Receipt")
+							print(format_gas_liter_receipt(liter,price))
+							print("Saving Transaction History")
+							receipts.append(format_gas_liter_receipt(liter,price))
+
+
 
 
 		case "2" :
-			show_history(receipts)
+			show_history()
 		case "3" : 
 			print("See you later!!!")
 		case _: 

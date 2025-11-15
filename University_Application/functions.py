@@ -22,7 +22,7 @@ def make_student_courses_list(student_course):
 		if student_course.lower() in compare_courses:
 			unique_course.append(student_course)
 		else:
-			print("Course not offered!")
+			print("Course not offered in this department!")
 	else:
 		print("Invalid input!")
 	return set(unique_course)
@@ -51,5 +51,65 @@ def update_record(record,unique_record,student_id):
 	record[student_id] = unique_record
 	return record
 
-def display_record(student_id):
+def display_unique_record(record,student_id):
 	return record.get(student_id, "Username doesn't exist!")
+
+def display_unique_courses(record,student_id):
+	user = record.get(student_id, "Username doesn't exist!")
+	if user != "Username doesn't exist!":
+		return user["courses"]
+	else:
+		return user
+
+def display_unique_zip_code(record,student_id):
+	user = record.get(student_id, "Username doesn't exist!")
+	if user != "Username doesn't exist!":
+		home = user["address"]
+		return home["Zip code"]
+	else:
+		return user
+	
+def display_unique_city(record,student_id):
+	user = record.get(student_id, "Username doesn't exist!")
+	if user != "Username doesn't exist!":
+		home = user["address"]
+		return home["city"]
+	else:
+		return user
+
+def add_to_unique_course(record,student_id,added_course):
+	user = record.get(student_id, "Username doesn't exist!")
+	if user != "Username doesn't exist!":
+		course = user["courses"]
+		if added_course not in course and added_course in courses_offered:
+			course.add(added_course)
+			return "Course successfully added for " + student_id
+		elif added_course in course:
+			return "Course already offered by " + student_id
+
+		elif added_course not in courses_offered:
+			return "Course not offered in this department!"
+	else:
+		return user
+
+def remove_from_unique_course(record,student_id,removed_course):
+	user = record.get(student_id, "Username doesn't exist!")
+	if user != "Username doesn't exist!":
+		course = user["courses"]
+		if removed_course in course:
+			course.remove(removed_course)
+			return "Course successfully removed for " + student_id
+		elif removed_course not in course:
+			return "Course not offered by " + student_id
+
+	else:
+		return user
+
+def view_usernames(record):
+	for key in record:
+		print(f"{key}", end = " ")
+	return ""
+
+
+
+		

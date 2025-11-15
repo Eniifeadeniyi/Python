@@ -60,7 +60,7 @@ class TestUniversityApplicationFunctions(unittest.TestCase):
 
 	def test_that_put_student_city_in_record_doesnt_take_invalid_input(self):
 		actual = put_student_city_in_record("Eni", "123456")
-		expected = "Invalid input!"
+		expected = "City must contain letters!"
 		self.assertEqual(actual,expected)
 
 	def test_that_put_student_Zip_code_in_record_works(self):
@@ -75,7 +75,7 @@ class TestUniversityApplicationFunctions(unittest.TestCase):
 
 	def test_that_put_student_Zip_code_in_record_only_takes_int(self):
 		actual = put_student_Zip_code_in_record("Eni", "12345l")
-		expected = "Invalid input!"
+		expected = "Zip code must be 6 digits!"
 		self.assertEqual(actual,expected)
 
 		

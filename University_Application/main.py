@@ -54,12 +54,70 @@ while(choice != "13"):
 
 		case "5" :
 			if count_usernames() != "No user added yet!":
-				display_available_courses()
 				student_id = input("Enter user's student_id: ")
-				student_course = input("Enter course for " + student_id + ": ")
-				print(put_student_course_in_record(student_id,student_course))
+				student_city = input("Enter address city for " + student_id + ": ")
+				student_zip_code = input("Enter address zip code for " + student_id + ": ")
+				print(put_student_city_in_record(student_id,student_city))
+				print(put_student_Zip_code_in_record(student_id,student_zip_code))
 			else:
 				print("Add a user first!")
+
+		case "6" :
+			if count_usernames() != "No user added yet!":
+				student_id = input("Enter user's student_id: ")
+				student_record = display_unique_record(student_id)
+				if type(student_record) == dict:
+					for key,value in student_record.items():
+						print(f"{key} : {value}")
+				else:
+					print(student_record)
+			else:
+				print("Add a user first!")
+
+		case "7" :
+			if count_usernames() != "No user added yet!":
+				student_id = input("Enter user's student_id: ")
+				student_courses = display_unique_courses(student_id)
+				if type(student_courses) == set:
+					for course in student_courses:
+						print(f"{course},", sep = ",", end = " ")
+				else:
+					print(student_courses)
+			else:
+				print("Add a user first!")
+
+		case "8" :
+			if count_usernames() != "No user added yet!":
+				student_id = input("Enter user's student_id: ")
+				print(display_unique_zip_code(student_id))
+			else:
+				print("Add a user first!")
+
+
+		case "9" :
+			if count_usernames() != "No user added yet!":
+				student_id = input("Enter user's student_id: ")
+				print(display_unique_city(student_id))
+			else:
+				print("Add a user first!")
+
+
+		case "10" :
+			if count_usernames() != "No user added yet!":
+				display_available_courses()
+				student_id = input("Enter user's student_id: ")
+				student_course = input("Enter course to be removed for " + student_id + ": ")
+				print(remove_from_unique_course(student_id,student_course))
+			else:
+				print("Add a user first!")
+
+		case "11" :
+			print(view_usernames())
+
+		case "12" :
+			print(count_usernames())
+
+
 	
 
 

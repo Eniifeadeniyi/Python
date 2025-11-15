@@ -54,8 +54,6 @@ def put_student_course_in_record(student_id,student_course):
 	else:	
 		return(user)
 	
-
-
 def put_student_city_in_record(student_id,student_city):
 	user = record.get(student_id, "Username doesn't exist!")
 	if user != "Username doesn't exist!":
@@ -63,11 +61,9 @@ def put_student_city_in_record(student_id,student_city):
 			user["city"] = student_city
 			return(student_id + "'s city successfully added!")
 		else:
-			return("Invalid input!")
+			return("City must contain letters!")
 	else:
 		return(user)
-
-
 
 def put_student_Zip_code_in_record(student_id, student_zip_code):
 	user = record.get(student_id, "Username doesn't exist!")
@@ -76,9 +72,10 @@ def put_student_Zip_code_in_record(student_id, student_zip_code):
 			user["Zip code"] = int(student_zip_code)
 			return(student_id + "'s zip code successfully added!")
 		else:
-			return("Invalid input!")
+			return("Zip code must be 6 digits!")
 	else:
 		return(user)
+
 def count(user):
 	count = 0
 	if user["name"] != "":

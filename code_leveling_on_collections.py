@@ -1,9 +1,18 @@
 from functools import reduce
 
+
+#6
+def sum_indexes(lists):
+	
+
+lists = [[2,3,4], [1,5,7], [4,6,8]]
+print(sum_indexes(lists))
+
 #1
 def add_to_tuple(tuple,*increase):
 	tuple +=  increase
 	return tuple
+tuple = input()
 
 
 #2
@@ -126,8 +135,7 @@ print(reduce(get_product,squares))
 #def get_sum(numbers):
 #	return sum(numbers)
 
-#6
-#I DONT GET THE QUESTION
+
 
 #3
 #NOT WORKING

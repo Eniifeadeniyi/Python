@@ -1,4 +1,4 @@
-courses_offered = {"Math", "Physics", "Computer Science", "Biology", "Chemistry", "Statistics", "English", "Economics", "History", "Philosophy", "Sociology", "Political Science", "Geography", "Psychology", "Art", "Music", "Engineering", "Law", "Medicine", "Business"}
+courses_offered = ["Math", "Physics", "Computer Science", "Biology", "Chemistry", "Statistics", "English", "Economics", "History", "Philosophy", "Sociology", "Political Science", "Geography", "Psychology", "Art", "Music", "Engineering", "Law", "Medicine", "Business"]
 
 record = {}
 used_usernames = set()
@@ -7,10 +7,10 @@ def make_student_personal_record(student_id):
 	if student_id.lower() not in used_usernames:
 		record[student_id] = {"name" : "", "age" : "", "courses" : set(), "address" : {"city" : "", "Zip code" : ""}}
 		used_usernames.add(student_id.lower())
-		print(student_id + " successfully added to record!")
+		return(student_id + " successfully added to record!")
 	else:
-		print("Username already in use!")
-	return record
+		return("Username already in use!")
+	
 
 def convert_courses_offered(courses_offered):	
 	return courses_offered.lower()
@@ -18,68 +18,84 @@ def convert_courses_offered(courses_offered):
 compare_courses = set(map(convert_courses_offered, courses_offered))
 
 def put_student_name_in_record(student_id,student_name):
-	user = record.get(student_id, "User doesn't exist!")
-	if user != "User doesn't exist!":
+	user = record.get(student_id, "Username doesn't exist!")
+	if user != "Username doesn't exist!":
 		user["name"] = student_name
-		print(student_id + "'s" + " name successfully added!")
+		return(student_id + "'s" + " name successfully added!")
 	else:
-		print(user)
-	return record
+		return(user)
+	
 
 
 def put_student_age_in_record(student_id,student_age):
-	user = record.get(student_id, "User doesn't exist!")
-	if user != "User doesn't exist!":
+	user = record.get(student_id, "Username doesn't exist!")
+	if user != "Username doesn't exist!":
 		if student_age.isdigit():
 			user["age"] = int(student_age)
-		print(student_id + "'s" + " age successfully added!")
+		return(student_id + "'s" + " age successfully added!")	
 	else:
-		print(user)
-	return record
-
+		return(user)
+	
+def display_available_courses():
+	print("Available courses: ", end = " ")
+	print(courses_offered)
 
 def put_student_course_in_record(student_id,student_course):
-	user = record.get(student_id, "User doesn't exist!")
-	if user != "User doesn't exist!":
-		if student_course.lower() in compare_courses:
-			user["courses"].add(unique_course)
-			print(student_id + "'s course successfully added!")
-		else:
-			print("Course not offered in this department!")
+	user = record.get(student_id, "Username doesn't exist!")
+	if user != "Username doesn't exist!":
+		if student_course.lower() in compare_courses and student_course not in user["courses"]:
+			user["courses"].add(student_course)
+			return(student_id + "'s course successfully added!")		
+		elif student_course in user["courses"]:
+			return "Course already offered by " + student_id
+
+		elif student_course.lower() not in compare_courses:
+			return("Course not offered in this department!")
 	else:	
-		print(user)
-	return record
+		return(user)
+	
 
 
 def put_student_city_in_record(student_id,student_city):
-	user = record.get(student_id, "User doesn't exist!")
-	if user != "User doesn't exist!":
+	user = record.get(student_id, "Username doesn't exist!")
+	if user != "Username doesn't exist!":
 		if not student_city.isdigit():
 			user["city"] = student_city
-			print(student_id + "'s city successfully added!")
+			return(student_id + "'s city successfully added!")
 		else:
-			print("Invalid input!")
+			return("Invalid input!")
 	else:
-		print(user)
-	return record
+		return(user)
+
 
 
 def put_student_Zip_code_in_record(student_id, student_zip_code):
-	user = record.get(student_id, "User doesn't exist!")
-	if user != "User doesn't exist!":
+	user = record.get(student_id, "Username doesn't exist!")
+	if user != "Username doesn't exist!":
 		if  student_zip_code.isdigit() and len(student_zip_code) == 6:
-			user["Zip code"] = student_zip_code
-			print(student_id + "'s zip code successfully added!")
+			user["Zip code"] = int(student_zip_code)
+			return(student_id + "'s zip code successfully added!")
 		else:
-			print("Invalid input!")
+			return("Invalid input!")
 	else:
-		print(user)
-	return record
+		return(user)
+def count(user):
+	count = 0
+	if user["name"] != "":
+		count += 1
+	if user["age"] != "":
+		count += 1
+	if user["courses"] != set():
+		count += 1
+	house = user["address"]
+	if house["city"] != "" or house["Zip code"] != "":
+		count += 1
+	return count
 
 def display_unique_record(student_id):
 	user = record.get(student_id, "Username doesn't exist!")
 	if user != "Username doesn't exist!":
-		if len(user) != 0:
+		if count(user) != 0:
 			return user
 		else:
 			return "No record added yet for " + student_id
@@ -100,45 +116,26 @@ def display_unique_courses(student_id):
 def display_unique_zip_code(student_id):
 	user = record.get(student_id, "Username doesn't exist!")
 	if user != "Username doesn't exist!":
-		home = user["address"]
-		if len(home) != 0:
-			if len(home["Zip code"]) != 0:
-				return home["Zip code"]
-			else:
-				return "No Zip code added yet for " + student_id
+		house = user["address"]
+		if house["Zip code"] != "":
+			return house["Zip code"]
 		else:
-			return "No address added yet for " + student_id
+			return "No Zip code added yet for " + student_id
 	else:
 		return user
 	
 def display_unique_city(student_id):
 	user = record.get(student_id, "Username doesn't exist!")
 	if user != "Username doesn't exist!":
-		home = user["address"]
-		if len(home) != 0:
-			if len(home["city"]) != 0:
-				return home["city"]
-			else:
-				return "No city added yet for " + student_id
+		house = user["address"]
+		if house["city"] != "":
+			return house["city"]
 		else:
-			return "No address added yet for " + student_id
+			return "No city added yet for " + student_id
 	else:
 		return user
 
-def add_to_unique_course(student_id,added_course):
-	user = record.get(student_id, "Username doesn't exist!")
-	if user != "Username doesn't exist!":
-		course = user["courses"]
-		if added_course not in course and added_course in courses_offered:
-			course.add(added_course)
-			return "Course successfully added for " + student_id
-		elif added_course in course:
-			return "Course already offered by " + student_id
 
-		elif added_course not in courses_offered:
-			return "Course not offered in this department!"
-	else:
-		return user
 
 def remove_from_unique_course(student_id,removed_course):
 	user = record.get(student_id, "Username doesn't exist!")
@@ -154,21 +151,18 @@ def remove_from_unique_course(student_id,removed_course):
 		return user
 
 def view_usernames():
-	if len(record) != 0:
-		for key in record:
-			print(f"{key}", end = " ")
+	if len(used_usernames) != 0:
+		return used_usernames
 	else:
 		return "No user added yet!"
-	return ""
 
 def count_usernames():
-	count = 0
 	if len(record) != 0:
-		for key in record:
-			count += 1
-		return count
+		return len(record)
 	else :
 		return "No user added yet!"
+
+
 
 
 

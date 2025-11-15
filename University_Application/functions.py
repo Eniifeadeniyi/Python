@@ -52,12 +52,23 @@ def update_record(record,unique_record,student_id):
 	return record
 
 def display_unique_record(record,student_id):
-	return record.get(student_id, "Username doesn't exist!")
+	user = record.get(student_id, "Username doesn't exist!")
+	if user != "Username doesn't exist!":
+		if len(user) != 0:
+			return user
+		else:
+			return "No record added yet for " + student_id
+	else:
+		return user
+	
 
 def display_unique_courses(record,student_id):
 	user = record.get(student_id, "Username doesn't exist!")
 	if user != "Username doesn't exist!":
-		return user["courses"]
+		if len(user["courses"]) != 0:
+			return user["courses"]
+		else:
+			return "No courses added yet for " + student_id
 	else:
 		return user
 
@@ -65,7 +76,13 @@ def display_unique_zip_code(record,student_id):
 	user = record.get(student_id, "Username doesn't exist!")
 	if user != "Username doesn't exist!":
 		home = user["address"]
-		return home["Zip code"]
+		if len(home) != 0:
+			if len(home["Zip code"]) != 0:
+				return home["Zip code"]
+			else:
+				return "No Zip code added yet for " + student_id
+		else:
+			return "No address added yet for " + student_id
 	else:
 		return user
 	
@@ -73,7 +90,13 @@ def display_unique_city(record,student_id):
 	user = record.get(student_id, "Username doesn't exist!")
 	if user != "Username doesn't exist!":
 		home = user["address"]
-		return home["city"]
+		if len(home) != 0:
+			if len(home["city"]) != 0:
+				return home["city"]
+			else:
+				return "No city added yet for " + student_id
+		else:
+			return "No address added yet for " + student_id
 	else:
 		return user
 
@@ -106,9 +129,21 @@ def remove_from_unique_course(record,student_id,removed_course):
 		return user
 
 def view_usernames(record):
-	for key in record:
-		print(f"{key}", end = " ")
+	if len(record) != 0:
+		for key in record:
+			print(f"{key}", end = " ")
+	else:
+		return "No user added yet!"
 	return ""
+
+def count_usernames(record):
+	count = 0
+	if len(record) != 0:
+		for key in record:
+			count += 1
+		return count
+	else :
+		return "No user added yet!"
 
 
 

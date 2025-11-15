@@ -47,6 +47,10 @@ class TestUniversityApplicationFunctions(unittest.TestCase):
 		actual = display_unique_record(record,"Enii")
 		expected = "Username doesn't exist!"
 		self.assertEqual(actual,expected)
+		record = {"tolu" : {}}
+		actual = display_unique_record(record,"tolu")
+		expected = "No record added yet for tolu" 
+		self.assertEqual(actual,expected)
 
 	def test_that_you_cant_display_record_of_unknown_username(self):
 		record = {"eni" : {"name" : "Eniife", "age" : 17, "courses" : {"Math", "Physics", "Biology"}, "address" : {"city" : "Lagos", "Zip code" : "115021"}},}
@@ -60,6 +64,11 @@ class TestUniversityApplicationFunctions(unittest.TestCase):
 		actual = display_unique_courses(record,"eni")
 		expected = {"Math", "Physics", "Biology"}
 		self.assertEqual(actual,expected)
+		record = {"eni" : {"name" : "Eniife", "age" : 17, "courses" : set(), "address" : {"city" : "Lagos", "Zip code" : "115021"}},}
+		actual = display_unique_courses(record,"eni")
+		expected = "No courses added yet for eni"
+		self.assertEqual(actual,expected)
+
 
 	def test_that_you_cant_display_course_of_unknown_username(self):
 		record = {"tolu" : {"name" : "Tolu", "age" : 17, "courses" : {"Math", "Physics", "Biology"}, "address" : {"city" : "Lagos", "Zip code" : "115021"}}, }
@@ -72,6 +81,15 @@ class TestUniversityApplicationFunctions(unittest.TestCase):
 		actual = display_unique_zip_code(record,"eni")
 		expected = "115021"
 		self.assertEqual(actual,expected)
+		record = {"eni" : {"name" : "Eniife", "age" : 17, "courses" : {"Math", "Physics", "Biology"}, "address" : {},}}
+		actual = display_unique_zip_code(record,"eni")
+		expected = "No address added yet for eni"
+		self.assertEqual(actual,expected)
+		record = {"eni" : {"name" : "Eniife", "age" : 17, "courses" : {"Math", "Physics", "Biology"}, "address" : {"city" : "Lagos", "Zip code" : ""}},}
+		actual = display_unique_zip_code(record,"eni")
+		expected = "No Zip code added yet for eni"
+		self.assertEqual(actual,expected)
+
 
 	def test_that_display_unique_zip_code_does_not_take_in_unknown_username(self):
 		record = {"eni" : {"name" : "Eniife", "age" : 17, "courses" : {"Math", "Physics", "Biology"}, "address" : {"city" : "Lagos", "Zip code" : "115021"}},}
@@ -84,6 +102,16 @@ class TestUniversityApplicationFunctions(unittest.TestCase):
 		actual = display_unique_city(record,"eni")
 		expected = "Lagos"
 		self.assertEqual(actual,expected)
+		record = {"eni" : {"name" : "Eniife", "age" : 17, "courses" : {"Math", "Physics", "Biology"}, "address" : {},}}
+		actual = display_unique_city(record,"eni")
+		expected = "No address added yet for eni"
+		self.assertEqual(actual,expected)
+		record = record = {"eni" : {"name" : "Eniife", "age" : 17, "courses" : {"Math", "Physics", "Biology"}, "address" : {"city" : "", "Zip code" : "115021"}},}
+		actual = display_unique_city(record,"eni")
+		expected = "No city added yet for eni"
+		self.assertEqual(actual,expected)
+
+
 
 	def test_that_display_unique_city_does_not_take_in_unknown_username(self):
 		record = {"eni" : {"name" : "Eniife", "age" : 17, "courses" : {"Math", "Physics", "Biology"}, "address" : {"city" : "Lagos", "Zip code" : "115021"}},}
@@ -138,3 +166,17 @@ class TestUniversityApplicationFunctions(unittest.TestCase):
 		record = {"eni" : {"name" : "Eniife", "age" : 17, "courses" : {"Math", "Physics", "Biology"}, "address" : {"city" : "Lagos", "Zip code" : "115021"}}, "tolu" : {"name" : "Tolu", "age" : 17, "courses" : {"Math", "Physics", "Biology"}, "address" : {"city" : "Lagos", "Zip code" : "115021"}},}
 		actual = view_usernames(record)
 		self.assertEqual(actual,"")
+		record = {}
+		actual = view_usernames(record)
+		expected = "No user added yet!"
+		self.assertEqual(actual,expected)
+
+	def test_that_count_usernames_works(self):
+		record = {"eni" : {"name" : "Eniife", "age" : 17, "courses" : {"Math", "Physics", "Biology"}, "address" : {"city" : "Lagos", "Zip code" : "115021"}}, "tolu" : {"name" : "Tolu", "age" : 17, "courses" : {"Math", "Physics", "Biology"}, "address" : {"city" : "Lagos", "Zip code" : "115021"}},}
+		actual = count_usernames(record)
+		expected = 2
+		self.assertEqual(actual,expected)
+		record = {}
+		actual = count_usernames(record)
+		expected = "No user added yet!"
+		self.assertEqual(actual,expected)

@@ -148,8 +148,8 @@ def remove_from_unique_course(student_id,removed_course):
 		return user
 
 def view_usernames():
-	if len(used_usernames) != 0:
-		return used_usernames
+	if len(record) != 0:
+		return record.keys()
 	else:
 		return "No user added yet!"
 

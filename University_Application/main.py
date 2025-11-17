@@ -116,6 +116,9 @@ while(choice != "13"):
 
 		case "12" :
 			print(count_usernames())
+		
+		case _: 
+			print("Invalid input!")
 
 
 	

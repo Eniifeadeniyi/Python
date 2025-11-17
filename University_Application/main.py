@@ -80,7 +80,7 @@ while(choice != "13"):
 				student_courses = display_unique_courses(student_id)
 				if type(student_courses) == set:
 					for course in student_courses:
-						print(f"{course},", sep = ",", end = " ")
+						print(f"{course}", end = ",")
 				else:
 					print(student_courses)
 			else:

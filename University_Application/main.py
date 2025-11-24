@@ -17,28 +17,28 @@ menu = """
 """
 
 choice = ""
-while(choice != "13"):
+while choice != "13":
 	print(menu)
 	choice = input("Enter operation: ")
 	match choice:
 		case "13": 
 			print("Bye!")
 		case "1" : 
-			student_id = input("Enter a unique name for username: ")
+			student_id = input("Enter a unique name for username: ").strip()
 			print(make_student_personal_record(student_id))
 
 		case "2" :
 			if count_usernames() != "No user added yet!":
-				student_id = input("Enter user's student_id: ")
-				student_name = input("Enter name for " + student_id + ": ")
+				student_id = input("Enter user's username: ").strip()
+				student_name = input("Enter name for " + student_id + ": ").strip()
 				print(put_student_name_in_record(student_id,student_name))
 			else:
 				print("Add a user first!")
 
 		case "3" :
 			if count_usernames() != "No user added yet!":
-				student_id = input("Enter user's student_id: ")
-				student_age = input("Enter age for " + student_id + ": ")
+				student_id = input("Enter user's username: ").strip()
+				student_age = input("Enter age for " + student_id + ": ").strip()
 				print(put_student_age_in_record(student_id,student_age))
 			else:
 				print("Add a user first!")
@@ -46,17 +46,25 @@ while(choice != "13"):
 		case "4" :
 			if count_usernames() != "No user added yet!":
 				display_available_courses()
-				student_id = input("Enter user's student_id: ")
-				student_course = input("Enter course for " + student_id + ": ")
-				print(put_student_course_in_record(student_id,student_course))
+				student_id = input("Enter user's username: ").strip()
+				count = input("How many courses are you entering: ").strip()
+				if count.isdigit():
+					if int(count) < 21:
+						for _ in range(int(count)):
+							student_course = input("Enter course for " + student_id + ": ").strip()
+							print(put_student_course_in_record(student_id,student_course))
+					else:
+						print("Maximum of 20 courses!")
+				else:
+					print("Invalid input!")
 			else:
 				print("Add a user first!")
 
 		case "5" :
 			if count_usernames() != "No user added yet!":
-				student_id = input("Enter user's student_id: ")
-				student_city = input("Enter address city for " + student_id + ": ")
-				student_zip_code = input("Enter address zip code for " + student_id + ": ")
+				student_id = input("Enter user's username: ").strip()
+				student_city = input("Enter address city for " + student_id + ": ").strip()
+				student_zip_code = input("Enter address zip code for " + student_id + ": ").strip()
 				print(put_student_city_in_record(student_id,student_city))
 				print(put_student_Zip_code_in_record(student_id,student_zip_code))
 			else:
@@ -64,7 +72,7 @@ while(choice != "13"):
 
 		case "6" :
 			if count_usernames() != "No user added yet!":
-				student_id = input("Enter user's student_id: ")
+				student_id = input("Enter user's username: ").strip()
 				student_record = display_unique_record(student_id)
 				if type(student_record) == dict:
 					for key,value in student_record.items():
@@ -76,7 +84,7 @@ while(choice != "13"):
 
 		case "7" :
 			if count_usernames() != "No user added yet!":
-				student_id = input("Enter user's student_id: ")
+				student_id = input("Enter user's username: ").strip()
 				student_courses = display_unique_courses(student_id)
 				if type(student_courses) == set:
 					for course in student_courses:
@@ -88,7 +96,7 @@ while(choice != "13"):
 
 		case "8" :
 			if count_usernames() != "No user added yet!":
-				student_id = input("Enter user's student_id: ")
+				student_id = input("Enter user's username: ").strip()
 				print(display_unique_zip_code(student_id))
 			else:
 				print("Add a user first!")
@@ -96,7 +104,7 @@ while(choice != "13"):
 
 		case "9" :
 			if count_usernames() != "No user added yet!":
-				student_id = input("Enter user's student_id: ")
+				student_id = input("Enter user's username: ").strip()
 				print(display_unique_city(student_id))
 			else:
 				print("Add a user first!")
@@ -105,23 +113,20 @@ while(choice != "13"):
 		case "10" :
 			if count_usernames() != "No user added yet!":
 				display_available_courses()
-				student_id = input("Enter user's student_id: ")
-				student_course = input("Enter course to be removed for " + student_id + ": ")
+				student_id = input("Enter user's username: ").strip()
+				student_course = input("Enter course to be removed for " + student_id + ": ").strip()
 				print(remove_from_unique_course(student_id,student_course))
 			else:
 				print("Add a user first!")
 
 		case "11" :
-			print(view_usernames())
+			if view_usernames() != "No user added yet!":
+				print(list(view_usernames()))
+			else:
+				print(view_usernames())
 
 		case "12" :
 			print(count_usernames())
 		
 		case _: 
 			print("Invalid input!")
-
-
-	
-
-
-	

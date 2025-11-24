@@ -4,12 +4,12 @@ record = {}
 used_usernames = set()
 
 def make_student_personal_record(student_id):
-	if student_id.lower() not in used_usernames:
+	if student_id.lower() not in used_usernames and student_id != " ":
 		record[student_id] = {"name" : "", "age" : "", "courses" : set(), "address" : {"city" : "", "Zip code" : ""}}
 		used_usernames.add(student_id.lower())
-		return(student_id + " successfully added to record!")
+		return student_id + " successfully added to record!"
 	else:
-		return("Username already in use!")
+		return "Username already in use!"
 	
 
 def convert_courses_offered(courses_offered):	
@@ -32,7 +32,9 @@ def put_student_age_in_record(student_id,student_age):
 	if user != "Username doesn't exist!":
 		if student_age.isdigit():
 			user["age"] = int(student_age)
-		return(student_id + "'s" + " age successfully added!")	
+			return(student_id + "'s" + " age successfully added!")
+		if not student_age.isdigit():
+			return "Invalid input!"
 	else:
 		return(user)
 	

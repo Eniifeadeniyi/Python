@@ -15,7 +15,6 @@ def search_for_element(sentence,element):
     if sentence.find(element) == -1:
         return "Not found!"
     for _ in range(count_occurrence(sentence, element)):
-            print(index)
             index = sentence.find(element,last)
             indexes.append(index)
             last = index + (len(element) - 1)

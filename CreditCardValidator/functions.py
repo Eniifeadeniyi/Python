@@ -41,7 +41,7 @@ def double_other_digits(card_number):
 		return "Invalid input!"
 
 def sum_both_sums(card_number):
-	if(double_other_digits(card_number) != "Invalid input!" and double_every_second_digit(card_number) != "Invalid input!"):
+	if double_other_digits(card_number) != "Invalid input!" and double_every_second_digit(card_number) != "Invalid input!":
 		sumA = double_every_second_digit(card_number)
 		sumB = double_other_digits(card_number)
 		total = sumA + sumB

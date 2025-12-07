@@ -140,7 +140,10 @@ while checker:
                             for room in rooms:
                                 print("Room number: " + room.get_number())
                                 print("Room type: " + room.get_room_type())
-                                print("Room status: " + room.get_is_available())
+                                if room.get_is_available():
+                                    print("Room status: Available")
+                                else:
+                                    print("Room status: Unavailable")
                                 print()
                         case "4":
                             number = input("Enter room number: ")

@@ -45,6 +45,8 @@ while checker:
                                 number_of_nights = input("Enter number of nights: ")
                                 customer.book_room(customer_id,check_in, number_of_nights)
                                 customer.set_reference_number(admin.generate_reference_number())
+                            else:
+                                print(admin.give_customer_a_room(customer_id, room_type))
                         case "2":
                             print("Room number: " +customer.get_room_number())
                             print("Payment Due: " +str(customer.get_payment_due()))

@@ -36,6 +36,7 @@ class Admin:
             customer.customer_id = str(self.__count)
             self.__customers.append(customer)
             return customer.get_customer_id()
+        return None
 
     def add_a_room(self,number,room_type):
         if room_type.lower() == "single" or room_type.lower() == "double" or room_type.lower() == "suite":
@@ -52,22 +53,19 @@ class Admin:
         for room in self.__rooms:
             if room.get_number() == number:
                 return room
-        else:
-           return None
+        return None
 
     def find_customer(self,customer_id):
         for customer in self.__customers:
             if customer.customer_id == customer_id:
                 return customer
-        else:
-            return None
+        return None
 
     def find_customer_by_room_number(self,room_number):
         for customer in self.__customers:
-            if customer.get_number() == room_number:
+            if customer.get_room_number() == room_number:
                 return customer
-        else:
-            return None
+        return None
 
     def check_customers(self,customer_id):
         for customer in self.__customers:
@@ -80,14 +78,13 @@ class Admin:
         if customer is None:
             return "Customer not found"
         for room in self.__rooms:
-            if room.get_room_type() == room_type.lower() and room.get_is_available() == True:
+            if room.get_room_type() == room_type.lower() and room.get_is_available():
                 customer.set_room_number(room.get_number())
-                customer.set_payment_due(room.get_price())
-
+                customer.set_payment_due(room.price())
                 room.set_is_booked(True)
-            else:
-                return "No room of selected type available"
-        return None
+                return "Booking successful"
+
+        return "No room of selected type available"
 
     def generate_reference_number(self):
         reference = "RES"
@@ -100,10 +97,12 @@ class Admin:
         if customer is None:
             return "Customer not found"
         if customer.get_reference_number() == reference_number:
-            number = customer.get_number()
+            number = customer.get_room_number()
             room = self.get_room(number)
-            room.set_is_booked(False)
-        return None
+            if room is not None:
+                room.set_is_booked(False)
+            return None
+        return "Wrong reference number"
 
     def put_room_for_maintenance(self,number):
         room = self.get_room(number)

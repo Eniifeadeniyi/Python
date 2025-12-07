@@ -15,7 +15,7 @@ class Customer:
             self.__total_paid = 0
             self.__reference_number = ""
             self.__check_in_date = ""
-            self.__checkout_date = ""
+            self.__check_out_date = ""
 
 
     @property

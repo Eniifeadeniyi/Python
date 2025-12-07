@@ -35,6 +35,7 @@ class Admin:
             self.__count += 1
             customer.customer_id = str(self.__count)
             self.__customers.append(customer)
+            return customer.get_customer_id()
 
     def add_a_room(self,number,room_type):
         if room_type.lower() == "single" or room_type.lower() == "double" or room_type.lower() == "suite":
@@ -43,13 +44,13 @@ class Admin:
 
     def check_rooms(self,number):
         for room in self.__rooms:
-            if room.get_room_number() == number:
+            if room.get_number() == number:
                 return True
         return False
 
     def get_room(self,number):
         for room in self.__rooms:
-            if room.get_room_number() == number:
+            if room.get_number() == number:
                 return room
         else:
            return None
@@ -63,7 +64,7 @@ class Admin:
 
     def find_customer_by_room_number(self,room_number):
         for customer in self.__customers:
-            if customer.get_room_number() == room_number:
+            if customer.get_number() == room_number:
                 return customer
         else:
             return None
@@ -80,7 +81,9 @@ class Admin:
             return "Customer not found"
         for room in self.__rooms:
             if room.get_room_type() == room_type.lower() and room.get_is_available() == True:
-                customer.room_number = room.get_room_number()
+                customer.set_room_number(room.get_number())
+                customer.set_payment_due(room.get_price())
+
                 room.set_is_booked(True)
             else:
                 return "No room of selected type available"
@@ -97,7 +100,7 @@ class Admin:
         if customer is None:
             return "Customer not found"
         if customer.get_reference_number() == reference_number:
-            number = customer.get_room_number()
+            number = customer.get_number()
             room = self.get_room(number)
             room.set_is_booked(False)
         return None
@@ -106,10 +109,6 @@ class Admin:
         room = self.get_room(number)
         if room is None:
             return "Room not found"
-        else :
+        else:
             room.set_is_under_maintenance(True)
-
-
-
-
-
+            return None
